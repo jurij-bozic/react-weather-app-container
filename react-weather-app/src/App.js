@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import { WeatherWrapper } from './components/WeatherWrapper';
 import './WeatherStyle.css';
 
