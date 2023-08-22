@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./WeatherStyle.scss";
+import "./WeatherStyle.css";
 
 export const CurrentWeather = ({ data }) => {
 

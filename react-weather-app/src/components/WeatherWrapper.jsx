@@ -4,7 +4,7 @@ import { CurrentWeather } from "./CurrentWeather";
 import { LoadingStatus } from "./backend-statuses/LoadingStatus";
 import { DefaultCurrentWeather } from "../data-models/WeatherModel";
 import { useHistory } from "../hooks/useHistory";
-import "./WeatherStyle.scss";
+import "./WeatherStyle.css";
 import useDebounce from "../hooks/useDebounce";
 import { useWeather } from "../hooks/useWeatherApi";
 
@@ -18,13 +18,6 @@ export const WeatherWrapper = () => {
     const handleModifyLocation = (location) => {
         setCurrentLocation(location);
     }
-
-    // useEffect(() => {
-    //     if (currentLocation) {
-    //         // debounceWeather('whoaaaa');
-    //         modifyHistory(currentLocation);
-    //     }
-    //   }, [currentLocation]);
 
       useEffect(() => {
         if (currentLocation) {
@@ -44,7 +37,6 @@ export const WeatherWrapper = () => {
 
     return (
         <div className="container">
-            <LoadingStatus isLoading={isLoading}>
                 <div className="grid-container">
                     <Search
                         modifyLocation={handleModifyLocation}
@@ -55,12 +47,12 @@ export const WeatherWrapper = () => {
                         setVisibleDropDown={setVisibleDropDown}
                         isError={isError}
                         errorMsg={errorMsg}
+                        isLoading={isLoading}
                     ></Search>
                     <CurrentWeather
                         data={currentWeather}
                     ></CurrentWeather>
                 </div>
-            </LoadingStatus>
         </div>
     );
 };

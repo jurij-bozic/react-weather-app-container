@@ -1,10 +1,10 @@
 import logo from './logo.svg';
 import { WeatherWrapper } from './components/WeatherWrapper';
-import './components/WeatherStyle.scss';
+import './components/WeatherStyle.css';
 
 function App() {
   return (
-    <div className="main-container" style={{ backgroundColor:  '#f0f0f0' }}>
+    <div className="main-container">
       <WeatherWrapper></WeatherWrapper>
     </div>
   );

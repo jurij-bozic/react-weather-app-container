@@ -1,10 +1,9 @@
 import React, { ReactElement } from "react";
-import "./StatusesStyle.css";
 
 export const ErrorStatus = ({ children, isError, errorMsg }) => {
   return (
     <div>
-        {isError ? <div>{errorMsg}</div>
+        {isError ? <div className="error-container">{errorMsg}</div>
           : children}
     </div>
   );

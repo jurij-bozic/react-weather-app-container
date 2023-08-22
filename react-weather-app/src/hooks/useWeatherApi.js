@@ -22,7 +22,6 @@ export const useWeather = (location) => {
       axios
         .get(url)
         .then((response) => {
-          console.log(response)
           let requestedWeather = {
             temp: response.data.main.temp,
             feelsLike: response.data.main.feels_like,
@@ -35,7 +34,6 @@ export const useWeather = (location) => {
           setCurrentWeather(requestedWeather);
         })
         .catch((error) => {
-          console.log(error);
           setIsError(true);
           
           if (error?.response?.data?.message) {
