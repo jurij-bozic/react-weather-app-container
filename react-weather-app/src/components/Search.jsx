@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { ErrorStatus } from "./backend-statuses/ErrorStatus";
 import "./WeatherStyle.scss";
 
-export const Search = ({currentLocation, modifyLocation, locality, country, data, history, visibleDropdown, setVisibleDropDown}) => {
+export const Search = ({ modifyLocation, location, data, history, visibleDropdown, setVisibleDropDown, isError, errorMsg}) => {
   // const { history, modifyHistory } = useHistory();
     const [inputValue, setInputValue] = useState('');
     const getDateInFormat = () => {
@@ -45,7 +46,9 @@ export const Search = ({currentLocation, modifyLocation, locality, country, data
           <label className="city">
           <img width="150" src={"https://openweathermap.org/img/wn/" + data.icon + "@2x.png"} alt="img" /></label>
           <br />
-          <em>{locality}</em> 
+          <ErrorStatus isError={isError} errorMsg={errorMsg}>
+            <em>{location}</em> 
+          </ErrorStatus>
         </div>
         <div className="search">
           <input

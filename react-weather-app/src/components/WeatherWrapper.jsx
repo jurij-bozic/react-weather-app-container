@@ -13,7 +13,7 @@ export const WeatherWrapper = () => {
     const [currentLocation, setCurrentLocation] = useState('');
     const [visibleDropdown, setVisibleDropDown] = useState(false);
     const debouncedCurrentLocation = useDebounce(currentLocation, 2000);
-    const { isLoading, location, currentWeather } = useWeather(debouncedCurrentLocation);
+    const { isLoading, location, currentWeather, isError, errorMsg } = useWeather(debouncedCurrentLocation);
 
     const handleModifyLocation = (location) => {
         setCurrentLocation(location);
@@ -44,17 +44,17 @@ export const WeatherWrapper = () => {
 
     return (
         <div className="container">
-            <LoadingStatus isLoading={false}>
+            <LoadingStatus isLoading={isLoading}>
                 <div className="grid-container">
                     <Search
-                        currentLocation={currentLocation}
                         modifyLocation={handleModifyLocation}
-                        locality={currentWeather.location}
-                        country={'test'}
+                        location={currentWeather.location}
                         data={currentWeather}
                         history={history}
                         visibleDropdown={visibleDropdown}
                         setVisibleDropDown={setVisibleDropDown}
+                        isError={isError}
+                        errorMsg={errorMsg}
                     ></Search>
                     <CurrentWeather
                         data={currentWeather}

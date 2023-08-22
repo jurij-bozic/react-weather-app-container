@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="main-container" style={{ backgroundColor:  '#f0f0f0' }}>
       <WeatherWrapper></WeatherWrapper>
-  </div>
+    </div>
   );
 }
 
