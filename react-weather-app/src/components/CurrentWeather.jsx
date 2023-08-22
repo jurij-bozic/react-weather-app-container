@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import "./WeatherStyle.css";
+import "../WeatherStyle.css";
 
 export const CurrentWeather = ({ data }) => {
-
   return (
     <div className="current-weather-details">
       <div className="current-weather-details-grid">

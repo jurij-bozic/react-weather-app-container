@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import { WeatherWrapper } from './components/WeatherWrapper';
-import './components/WeatherStyle.css';
+import './WeatherStyle.css';
 
 function App() {
   return (

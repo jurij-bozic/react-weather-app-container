@@ -51,7 +51,6 @@ export const useWeather = (location) => {
 
   return {
     isLoading,
-    location,
     currentWeather,
     isError,
     errorMsg

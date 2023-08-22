@@ -16,14 +16,23 @@ export const useHistory = () => {
   }, []);
 
   const modifyHistory = (newHistory) => {
-    if (history && history.length >= 5) {
-      history.splice(0, 1);
+    let repeatedEntry = false;
+    history.forEach(item => {
+      if (item == newHistory) {
+        repeatedEntry = true;
+      }
+    });
+
+    if (!repeatedEntry) {
+      if (history && history.length >= 5) {
+        history.splice(0, 1);
+      }
+      setHistory([ ...history, newHistory ]);
+      localStorage.setItem(
+        "history",
+        JSON.stringify([ ...history, newHistory ])
+      );
     }
-    setHistory([ ...history, newHistory ]);
-    localStorage.setItem(
-      "history",
-      JSON.stringify([ ...history, newHistory ])
-    );
   };
 
   return {

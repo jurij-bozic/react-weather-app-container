@@ -1,10 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { ErrorStatus } from "./backend-statuses/ErrorStatus";
 import { LoadingStatus } from "./backend-statuses/LoadingStatus"
-import "./WeatherStyle.css";
+import "../WeatherStyle.css";
 
-export const Search = ({ modifyLocation, location, data, history, visibleDropdown, setVisibleDropDown, isError, errorMsg, isLoading}) => {
-  // const { history, modifyHistory } = useHistory();
+export const SearchComponent = ({ 
+  modifyLocation, 
+  location, 
+  data, 
+  history, 
+  visibleDropdown, 
+  setVisibleDropDown, 
+  isError, 
+  errorMsg, 
+  isLoading}) => {
     const [inputValue, setInputValue] = useState('');
     const handleDropdown = () => {
       if (true) {
